@@ -1,274 +1,224 @@
 # Privacy Policy for TVBold
 
-**Last Updated: March 29, 2026**
+**Last Updated: April 6, 2026**
 
 ## 1. Introduction
 
-TVBold ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application TV Bold (the "App"). It also includes **subscriptions and purchase terms** for TV Bold Premium. Please read this policy carefully. If you do not agree with its terms, please do not access the App.
+TVBold ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application TV Bold (the "App"). It also includes **subscriptions and purchase terms** for **TV Bold Premium** (premium access is granted when the **TVBold Pro** entitlement is active in our subscription system—see §14). Please read this policy carefully. If you do not agree with its terms, please do not access the App.
+
+This disclosure is structured to align with [Apple’s App Privacy Details](https://developer.apple.com/app-store/app-privacy-details/) and the data categories used in App Store Connect.
 
 ## 2. Information We Collect
 
-TVBold is designed with privacy in mind. We collect minimal data necessary to provide match schedule information, secure access to our services, and optional premium features. In accordance with Apple's App Privacy Details requirements, we disclose the following data types collected by the App and our third-party service providers:
+TVBold is designed with privacy in mind. We collect minimal data necessary to provide match schedule information, secure access to our services, optional premium features, and—when you opt in—push notifications for your favorite team.
 
-### 2.1 Data Collected Automatically
+### 2.1 Data Collected Automatically (Networking and SDKs)
 
-The following data types are collected automatically when you use the App:
+The following data types are collected when you use the App, including via third-party SDKs:
 
 #### Device ID
-- **What we collect:** IP addresses transmitted as part of network requests to our service providers (Supabase, Firebase, Google Mobile Ads, RevenueCat, and Apple when validating purchases or receipts)
-- **Purpose:** App Functionality (network communication, match data, authentication, subscription verification), Analytics, Third-Party Advertising, and subscription management
-- **Linked to User:** No (for Supabase operational logs and Firebase analytics as described below) / Yes (for Google Mobile Ads — may be linked for advertising; for RevenueCat — linked to an app user identifier as described in §2.3 and §5.4)
-- **Used for Tracking:** No (for Supabase and Firebase) / Yes (for Google Mobile Ads — may be used to track you across apps and websites)
-- **Third-Party Collection:** Collected by Supabase, Firebase/Google, Google Mobile Ads, RevenueCat, and Apple as applicable
+- **What we collect:** IP addresses sent with network requests; **device and advertising-related identifiers** through integrated SDKs (e.g. Google Mobile Ads). When you enable push notifications and register for alerts (see §2.3), we also transmit an **Apple Push Notification service (APNs) device token** and an **identifier for vendors (IDFV)** to our backend with your favorite team.
+- **Purpose:** App Functionality (API access, authentication, notifications infrastructure), Analytics, Third-Party Advertising, subscription management, and—where applicable—device registration for push.
+- **Linked to User:** Varies by processor: pseudonymous linkage for our backend (see §2.2); Google Mobile Ads and related ad technology may link data for advertising; RevenueCat links data to your app user identifier (§5.4).
+- **Used for Tracking:** No for our own use of Supabase/Firebase analytics as described below; **Yes** may apply to Google’s advertising stack as defined by Apple’s “Tracking” (cross-app/website advertising measurement and related purposes—see §8).
+- **Third-party collection:** Supabase, Google (Firebase Analytics, Google Mobile Ads), RevenueCat, Apple (IAP, APNs, DeviceCheck/App Attest as applicable).
 
-#### Product Interaction
-- **What we collect:** Information about how you interact with the App, such as app launches, taps, and interactions with match schedules. This includes match data queries sent to Supabase, app usage events sent to Firebase Analytics, ad interactions (impressions, clicks, views) sent to Google Mobile Ads, and interactions with paywalls or subscription flows processed via RevenueCat and Apple.
-- **Purpose:** App Functionality, Analytics, Third-Party Advertising, and subscription-related functionality
-- **Linked to User:** No (for Supabase and Firebase) / Yes (for Google Mobile Ads; for RevenueCat — tied to app user ID)
-- **Used for Tracking:** No (for Supabase and Firebase) / Yes (for Google Mobile Ads)
-- **Third-Party Collection:** Collected by Supabase, Firebase/Google, Google Mobile Ads, and RevenueCat as applicable
+#### Product interaction
+- **What we collect:** How you use the App (e.g. launches, navigation, interactions with schedules), requests to our backend for match data, Firebase Analytics events we configure, interaction with ads (impressions, clicks), and paywall or subscription UI flows handled via RevenueCat and Apple.
+- **Purpose:** App Functionality, Analytics, Third-Party Advertising, subscription-related functionality.
+- **Linked to User / Used for Tracking:** As for Device ID—Firebase Analytics is used for product analytics, not as a substitute for the ad network’s tracking disclosure; Google Mobile Ads may link and use data for tracking as described by Google.
+- **Third-party collection:** Supabase, Firebase/Google, Google Mobile Ads, RevenueCat.
 
-#### Crash Data (Diagnostics)
-- **What we collect:** Crash logs and error information when the App encounters errors or crashes. This may include error logs from Supabase SDK and crash reports from Firebase Analytics.
-- **Purpose:** App Functionality (error handling and debugging) and Analytics (stability)
-- **Linked to User:** No — not linked to your real-world identity (may be associated with pseudonymous identifiers used for auth or subscriptions where those SDKs attach context)
-- **Used for Tracking:** No
-- **Third-Party Collection:** Collected by Supabase and Firebase/Google
+#### Diagnostics
+- **What we collect:** Error and stability-related signals needed to operate the App (including error information that may be emitted by client SDKs or our backend integration). **The App integrates Firebase Analytics for analytics; it does not integrate the Firebase Crashlytics SDK.** We do not represent that full crash report symbolication is collected unless or until we enable a dedicated crash reporting SDK.
+- **Purpose:** App Functionality (troubleshooting) and Analytics (stability trends).
+- **Linked to User:** Generally **not** linked to your real-world identity; may be associated with pseudonymous IDs where SDKs attach session context.
+- **Used for Tracking:** No.
+- **Third-party collection:** Supabase (operational logs where applicable), Firebase/Google.
 
-#### Performance Data
-- **What we collect:** Technical performance metrics such as app launch time, performance data, and energy usage collected by Firebase Analytics.
-- **Purpose:** Analytics
-- **Linked to User:** No
-- **Used for Tracking:** No
-- **Third-Party Collection:** Collected by Firebase/Google
+#### Performance data
+- **What we collect:** Technical metrics such as app launch timing and performance characteristics collected by Firebase Analytics.
+- **Purpose:** Analytics.
+- **Linked to User:** No.
+- **Used for Tracking:** No.
+- **Third-party collection:** Firebase/Google.
 
-#### Advertising Data
-- **What we collect:** Information about advertisements you have seen, including which ads were displayed, when they were shown, and how you interacted with them (impressions, clicks, views).
-- **Purpose:** Third-Party Advertising
-- **Linked to User:** Yes — may be linked for advertising purposes
-- **Used for Tracking:** Yes — may be used to track you across apps and websites owned by other companies
-- **Third-Party Collection:** Collected by Google Mobile Ads
+#### Advertising data
+- **What we collect:** Data about ads served in the App (e.g. impressions, clicks, views) through Google Mobile Ads.
+- **Purpose:** Third-Party Advertising.
+- **Linked to User:** May be linked for advertising purposes by Google’s systems.
+- **Used for Tracking:** May be used for tracking across apps and websites owned by other companies, as defined by Apple.
+- **Third-party collection:** Google Mobile Ads.
 
-#### Purchase History (subscriptions and in-app purchases)
-- **What we collect:** We do not process your payment card details. **Apple** processes payments for in-app subscriptions. **RevenueCat** receives subscription and transaction-related data from Apple (and the App) to provide entitlement status (e.g. whether Premium is active). Our **Supabase Edge Functions** may receive an **App Store receipt** or related data from the App to **verify** subscription status with **Apple's receipt validation services** before returning premium content.
-- **Purpose:** App Functionality (unlock Premium features: e.g. ad removal, favorite-team notifications; verify eligibility server-side where implemented)
-- **Linked to User:** Yes — linked to your **anonymous app user identifier** (Supabase user UUID used as RevenueCat app user ID) and to your Apple ID on Apple's systems (we do not receive your Apple ID password)
-- **Used for Tracking:** No — not used by us for cross-app advertising tracking; third-party policies (Apple, RevenueCat) govern their own use
-- **Third-Party Collection:** Apple, RevenueCat, and our backend infrastructure (Supabase-hosted functions) as described above
+#### Purchase history
+- **What we collect:** We do **not** process your payment card numbers. **Apple** processes in-app purchases. **RevenueCat** processes subscription and transaction-related metadata to determine whether premium access (our **TVBold Pro** entitlement) is active. **In the App today, subscription status for features like ad removal is determined client-side via RevenueCat;** our Supabase Edge Functions include optional **App Store receipt validation** that can be invoked when the App sends a receipt payload—**primarily for server-verified premium content flows when that path is used.**
+- **Purpose:** App Functionality (entitlements, restore purchases, optional server-side verification with Apple where needed).
+- **Linked to User:** Yes—to your **pseudonymous app user identifier** (Supabase anonymous user id used with RevenueCat) and, on Apple’s systems, your Apple ID (we do not receive your Apple ID password).
+- **Used for Tracking:** Not used by us for cross-app advertising tracking; refer to Apple’s and RevenueCat’s policies for their processing.
+- **Third-party collection:** Apple, RevenueCat, and our Supabase-hosted backend when a receipt validation request is made.
 
-### 2.2 Anonymous Account and Identifiers
+### 2.2 User ID (Pseudonymous Account)
 
-To secure access to our backend and to support **restore purchases across devices**, the App uses **anonymous sign-in** with Supabase:
+Under Apple’s **Identifiers → User ID** category, the App uses Supabase **anonymous authentication**:
 
-- **What we collect / generate:** A **pseudonymous user identifier** (UUID) for your anonymous Supabase account, and **session tokens (JWTs)** used to authenticate requests from the App to our services.
-- **Purpose:** App Functionality and fraud prevention (authenticated access to edge functions, alignment of subscription state with the same anonymous user across installs/devices when combined with RevenueCat `logIn` using that UUID).
-- **Linked to User:** The UUID is **not** your name, email, or phone number. It is a **pseudonymous** account identifier. If you later sign in with a real identity (if we add that in the future), this section will be updated.
-- **Used for Tracking:** No — not used for third-party advertising tracking by us.
-- **Third-Party Collection:** Supabase (authentication/session). RevenueCat receives the same UUID as the **app user ID** when the App links your subscription to that identifier.
+- **What we collect:** A **pseudonymous user identifier** (UUID) for your anonymous Supabase account and **session tokens (JWTs)** used to authenticate requests to our edge functions.
+- **Purpose:** App Functionality and abuse prevention (authenticated API access; aligning subscription restore with the same anonymous profile when RevenueCat `logIn` uses the same id).
+- **Linked to User:** It is an account-level identifier but **not** your name, email, or phone number unless you later opt into a different sign-in method (this policy would be updated).
+- **Used for Tracking:** Not used by us for third-party advertising tracking.
+- **Third-party collection:** Supabase (Auth). RevenueCat receives the same UUID as the RevenueCat **app user ID** when the App links purchases to that identifier.
 
-We do **not** ask you to create a password for TV Bold for this anonymous flow; session handling is performed by the Supabase client according to their practices.
+We do **not** ask you to create a password for this anonymous flow; the Supabase client manages the session per its documentation.
 
-### 2.3 Data Stored Locally (Not Collected)
+### 2.3 Push Notifications and Device Registration
 
-The following data is stored locally on your device and is **not** transmitted to us as "content" in the same way as server logs (some local state may still affect what the App sends in API calls):
+If you are a **Premium** subscriber and opt in to notifications for a **favorite team**, the App registers your device with our backend:
 
-- **App Usage Count / Usage Days:** Stored locally (e.g. iOS UserDefaults) to determine when to show Apple's native app review prompt and certain paywall timing. This stays on the device unless indirectly reflected in generic analytics events.
-- **Network Connection Status:** Monitored on-device for error handling; not transmitted as a standalone "status feed."
+- **What we collect:** Your **APNs device token** (hex), **IDFV** (or a generated device id if unavailable), and the **favorite team** string you selected, sent to our **register-device** Supabase edge function using your authenticated session. If you turn off notifications in the App, we attempt to **unregister** the token (`unregister-device`).
+- **Purpose:** App Functionality (delivering match or team-related notifications you requested).
+- **Linked to User:** Yes—associated with your pseudonymous Supabase user id via the authenticated request.
+- **Used for Tracking:** No—not used for cross-app advertising tracking by us.
+- **Third-party collection:** Supabase (our backend). **Apple** operates APNs delivery; Apple’s use is governed by Apple’s privacy policy.
 
-### 2.4 Data We Do NOT Collect (or Do Not Collect Directly)
+### 2.4 App Attest and Device Integrity
 
-We do **not** intend to collect the following **directly from you** in the App today:
+To reduce automated abuse and protect match data APIs, the App uses **Apple’s App Attest / DeviceCheck** to create **cryptographic attestations or assertions** that your instance can send to our servers with API requests.
 
-- **Name, email address, phone number, or postal address** (unless we add optional account features later and update this policy)
-- **Location data** (precise or coarse)
-- **Health or fitness data**
-- **Payment card numbers or bank account details** — payments are handled by **Apple**; we do not receive your full card data
-- **Contacts, photos, videos, or other media** from your device
-- **Browsing history or in-app search history** beyond what is implied by normal server logs and analytics as described above
-- **Sensitive categories** of personal data as commonly understood under privacy laws (beyond what is necessary for the services described)
+- **Purpose:** App Functionality and fraud prevention (verifying that requests come from legitimate app builds).
+- **Linked to User:** Can be associated with your pseudonymous account when combined with authenticated calls.
+- **Used for Tracking:** No—not used for advertising tracking by us.
 
-**Important:** We **do** use pseudonymous identifiers, subscription status, and purchase-related data as described in §2.1 and §2.2. That is **not** the same as collecting your name or payment card.
+### 2.5 Data Stored Locally (Not “Collected” in the Apple Sense by Us)
+
+Unless it is also sent to servers as described above:
+
+- **Usage days / counters** (e.g. for when to show Apple’s in-app review prompt or paywall timing) in **UserDefaults** or similar.
+- **Preferences** such as favorite team may be stored locally **and** sent when you register for push as described in §2.3.
+
+### 2.6 Data We Do Not Intend to Collect Directly Today
+
+- **Name, email, phone, or postal address** (unless we add optional account features and update this policy).
+- **Precise or coarse location** as a dedicated location feature.
+- **Health or fitness** data.
+- **Payment card or bank account numbers** (Apple processes payments).
+- **Contacts, photos, videos**, or other device media libraries.
+- **Browsing history** or **search history** beyond ordinary server logs and analytics events described above.
+- **Sensitive categories** beyond what is strictly necessary for the services described.
+
+**Note:** Free-form text you might type in future features could imply additional categories—we will update this policy if that changes.
 
 ## 3. How We Collect Information
 
-We collect information in the following ways:
-
-- **When you use the App:** Network requests carry IP addresses and may include authenticated headers (JWT) for Supabase edge functions.
-- **When you use Premium or the paywall:** Apple and RevenueCat process purchase and subscription data; the App may send receipt or validation payloads to our backend for **server-side verification** with Apple.
-- **Automatically via SDKs:** Supabase, Firebase Analytics, Google Mobile Ads, and RevenueCat collect data as described in Section 5.
-- **Locally on your device:** Usage counters and preferences stored in UserDefaults or similar; primarily for on-device logic.
+- **Normal App use:** Network traffic (including IP addresses), authenticated calls with JWT when signed in anonymously, and optional App Attest assertions.
+- **Ads:** After the **App Tracking Transparency** prompt (if shown), Google Mobile Ads initializes (§8).
+- **Analytics:** Firebase Analytics events from the App.
+- **Purchases:** Apple, RevenueCat, and—**when used**—our backend receipt validation with Apple.
+- **Push opt-in:** Only after you request notifications; registration requires an active Premium subscription path as implemented in the App.
 
 ## 4. How We Use Your Information
 
-We use the information we collect for:
-
-- **App Functionality:** Match schedules; authenticated API access; **Premium** features (e.g. removing ads where applicable, enabling favorite-team notifications); **subscription verification** (client and server-side where implemented); error handling and stability.
-- **Analytics:** Understanding usage, improving features, performance and diagnostics (Firebase and related tooling).
-- **Third-Party Advertising:** Serving and measuring ads via Google Mobile Ads (non-Premium users where ads are shown).
-- **App Review Prompts:** Local usage tracking to show Apple's review prompt; not shared off-device as a dedicated "profile."
+- **App Functionality:** Schedules, secure API access, Premium (**TVBold Pro**) features (e.g. reduced/no ads where implemented, favorite-team notifications), device registration, optional server receipt checks, integrity checks.
+- **Analytics:** Product improvement via Firebase Analytics.
+- **Third-Party Advertising:** Google Mobile Ads for non-Premium users where ads are enabled.
+- **Review prompts:** Local usage logic for Apple’s review API.
 
 ## 5. Third-Party Service Providers
 
-We use the following third-party services that may collect information:
-
 ### 5.1 Supabase
 
-We use Supabase (supabase-swift SDK and Supabase Auth) for **anonymous authentication**, **edge functions** (including optional **receipt validation** and premium content delivery), and related infrastructure.
+**Anonymous auth**, edge functions (matches, reference data, **register-device** / **unregister-device**, optional **get-premium-content** receipt validation), and hosting. Data may include IP addresses, User ID (UUID), JWTs, device registration fields (§2.3), API telemetry, and receipt payloads when that endpoint is used.
 
-**Data types may include:**
-- **Device ID:** IP addresses on requests to Supabase
-- **User ID:** Pseudonymous anonymous user UUID and session tokens for authenticated requests
-- **Product Interaction:** Requests to edge functions (e.g. match data, premium routes)
-- **Purchase-related data:** When the App sends data for **Apple receipt validation**, our functions process that payload to verify subscription status with Apple
-- **Crash Data:** Error logs where applicable
+**Purpose:** App Functionality. **Tracking:** Not used by us for advertising tracking through Supabase.
 
-**Purpose:** App Functionality (auth, API access, premium verification, database-backed services)
-
-**Data Linking:** Request data may be associated with your **anonymous user id** for authorization and logging. This is pseudonymous, not your real name or email unless you later provide such data.
-
-**Tracking:** Not used by us for advertising tracking through Supabase.
-
-Privacy Policy: https://supabase.com/privacy
+Privacy policy: https://supabase.com/privacy
 
 ### 5.2 Firebase (Google)
 
-The App includes Firebase SDK with Firebase Analytics enabled.
+Firebase **Analytics** (not Crashlytics in the current App build). Data can include device/app usage and performance-related measurements per Google’s implementation.
 
-**Data Types Collected by Firebase:** Device ID, product interaction, crash data, performance data (as in prior sections).
-
-**Purpose:** Analytics and App Functionality (stability).
-
-**Data Linking / Tracking:** As described in §2.1 — analytics data is not used for advertising tracking by Firebase in the way Google Mobile Ads is.
-
-Privacy Policy: https://policies.google.com/privacy
+**Purpose:** Analytics and operational insight. Privacy policy: https://policies.google.com/privacy
 
 ### 5.3 Google Mobile Ads
 
-The App may display advertisements when you are not a Premium subscriber (subject to app configuration).
+Ads for users without active Premium where configured. Purposes include Third-Party Advertising; linkage and tracking as described by Google and reflected in §2.1 and §8.
 
-**Data Types:** Device ID, product interaction, advertising data.
-
-**Purpose:** Third-Party Advertising.
-
-**Data Linking / Tracking:** May be linked and used for tracking as described by Google.
-
-Privacy Policy: https://policies.google.com/privacy  
-Ad settings: https://adssettings.google.com
-
-**Note:** You can control personalized advertising and ATT as described in §8 and §9.
+Privacy policy: https://policies.google.com/privacy — Ad settings: https://adssettings.google.com
 
 ### 5.4 RevenueCat
 
-We use **RevenueCat** to manage in-app purchases and subscription entitlements (e.g. **Premium**).
+Subscription management and **TVBold Pro** entitlement state; **logIn** with your anonymous Supabase user id for restore across devices.
 
-**Data types may include:** App user identifier (we use the same pseudonymous UUID as Supabase anonymous `user.id` where the App calls `logIn`), subscription status, product identifiers, transaction-related metadata, and device/network information as described in RevenueCat's policy.
+Privacy policy: https://www.revenuecat.com/privacy
 
-**Purpose:** App Functionality (determine entitlement, restore purchases, present offerings).
+### 5.5 Apple
 
-**Data Linking:** Subscription data is linked to your **app user ID** (pseudonymous).
+App Store purchases, APNs, App Attest/DeviceCheck, and receipt validation endpoints when used.
 
-**Tracking:** Not used by us for cross-app advertising; see RevenueCat's policy for their processing.
-
-Privacy Policy: https://www.revenuecat.com/privacy
-
-### 5.5 Apple (App Store, StoreKit, receipt validation)
-
-**Apple** processes payments for digital subscriptions and in-app purchases. Apple's collection and use of data is governed by Apple's privacy policy: https://www.apple.com/legal/privacy/
-
-We do not receive your Apple ID password. Subscription management (cancel, refund requests through Apple) is handled under **Apple's terms and policies** for the App Store.
+Privacy policy: https://www.apple.com/legal/privacy/
 
 ## 6. Data Storage and Security
 
-- Network communications use HTTPS/TLS.
-- Local data (e.g. usage counters) uses iOS storage mechanisms appropriate to the App.
-- Match and operational data are hosted on Supabase; we rely on their security measures for that infrastructure.
-- Subscription state is synchronized via RevenueCat and Apple; we do not store your payment card on our servers.
-
-No method of transmission or storage is 100% secure.
+HTTPS/TLS for network calls; industry-standard protections from our processors. No payment card storage on our servers. No method is 100% secure.
 
 ## 7. Data Retention and Deletion
 
-### 7.1 Data Retention
+Retention follows Supabase, Google, and RevenueCat practices and our configuration. Local data is removed on uninstall. Because accounts are anonymous, deletion requests may need corroborating details—contact §15. You may also use Apple, Google, and RevenueCat tools where available.
 
-- **Supabase:** Auth sessions, logs, and edge-function processing (including receipt validation logs if any) are retained per Supabase practices and our configuration.
-- **Firebase:** Per Google's retention and analytics policies.
-- **Google Mobile Ads:** Per Google's policies.
-- **RevenueCat:** Per RevenueCat's policies for subscriber and transaction records.
-- **Apple:** Per Apple's policies for purchase history and subscriptions.
-- **Local Device Data:** Until uninstall or app data clear.
+## 8. App Tracking Transparency (ATT) and “Tracking”
 
-### 7.2 Data Deletion
+For personalized advertising and measurement, iOS may show a tracking permission dialog. The App’s tracking usage description is presented with that prompt and explains that data may be used to support personalized ads and measure ad effectiveness—consistent with the App’s `NSUserTrackingUsageDescription` in Info.plist. You can change the choice under **Settings → Privacy & Security → Tracking** (wording may vary by iOS version).
 
-- **Local:** Uninstalling the App removes local data stored by the App.
-- **Pseudonymous account and server-side data:** Because your account is **anonymous**, deletion requests may require information that can correlate your requests to server logs (e.g. approximate timing, device details you provide). Contact us as in §15. We will assist within practical limits and coordinate with processors where feasible.
-- **Apple / RevenueCat / Google:** You may also use **Apple's subscription and privacy tools**, **Google's ad settings**, and **RevenueCat-supported flows** (e.g. via the App or their documentation) where applicable for data subject requests handled by those controllers.
-
-We may retain information where required by law or for legitimate purposes (e.g. disputes, security).
-
-## 8. Data Linking and Tracking
-
-- **Pseudonymous account:** Your anonymous Supabase UUID and RevenueCat app user ID **link** subscription and API activity to a stable pseudonym, not necessarily to your real-world identity.
-- **Firebase / Supabase (non-ad):** Generally not used to build advertising profiles across third-party apps by us.
-- **Google Mobile Ads:** May link and track for advertising as described above.
-- **ATT:** You may be prompted for permission to track; you can change this in iOS Settings.
+Google Mobile Ads may engage in **Tracking** according to Apple’s definition (e.g., linking across apps/sites for ads or measurement). Firebase Analytics is used for product analytics, not as a replacement for Google’s ads tracking disclosures.
 
 ## 9. Your Rights and Choices
 
-- **Access / information:** Contact us (§15). Third parties (Apple, Google, RevenueCat, Supabase) may offer their own portals or processes.
-- **Deletion:** Uninstall for local data; contact us for assistance with pseudonymous server-side data. Full deletion across all processors may require actions with **Apple**, **Google**, and **RevenueCat** as well.
-- **Withdraw consent / stop processing:** Discontinue use of the App; note that basic networking still involves IP processing.
-- **Subscriptions:** Manage, cancel, and request refunds where applicable through **Apple** (see §14).
-- **EEA / UK / California:** If applicable laws grant you additional rights (access, correction, portability, objection, etc.), you may contact us and we will respond in accordance with applicable law.
+Access, correction, deletion, or objections may be available depending on your region. Contact us at §15. You may also use processor-specific tools (Apple, Google ad settings, RevenueCat/Supabase as applicable). For subscriptions, use Apple’s subscription management (§14).
 
-## 10. Children's Privacy
+## 10. Children’s Privacy
 
-The App is not intended for children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided personal information, contact us and we will take appropriate steps.
+The App is **not** directed to children under 13. If you believe we have information from a child under 13, contact us.
 
-## 11. Changes to This Privacy Policy
+## 11. Changes
 
-We may update this Privacy Policy from time to time. We will post the new version here and update the "Last Updated" date. Material changes may also be communicated through the App or App Store listing where appropriate.
+We may update this policy and revise the **Last Updated** date. Material changes may be communicated in the App or on the App Store listing.
 
-## 12. International Data Transfers
+## 12. International Transfers
 
-Your information may be processed in countries other than your country of residence (e.g. where Supabase, Google, RevenueCat, or Apple operate). By using the App, you acknowledge such transfers where permitted by law.
+Processors may operate globally. By using the App where permitted, you understand data may be processed outside your country.
 
-## 13. Compliance with Laws
+## 13. Compliance
 
-We aim to comply with applicable laws, including GDPR (EEA/UK where applicable), CCPA/CPRA (California) where applicable, and other local privacy laws.
+We aim to comply with applicable privacy laws (e.g. GDPR, UK GDPR, CCPA/CPRA where applicable).
 
 ## 14. Subscriptions and Purchase Terms (TV Bold Premium)
 
-These terms apply to **auto-renewing subscriptions** purchased in the App via the **App Store** (e.g. **TV Bold Premium** / product identifiers such as `tvbold.premium.monthly` as offered in the App). **Prices, billing period, and any trial** are shown **in the App and on the App Store at the time of purchase** and may vary by region.
+These terms apply to **auto-renewing subscriptions** and other **in-app purchases** offered in TV Bold via the **App Store**.
 
-1. **Payment:** Charges are billed to your **Apple ID**. We do not charge your card directly.
-2. **Auto-renewal:** Unless you turn off auto-renewal **at least 24 hours before** the end of the current period, your subscription renews for the same duration at the then-current price.
-3. **Manage / cancel:** Open **Settings → Apple ID → Subscriptions** on your device (or equivalent App Store subscription management). Uninstalling the App does **not** cancel the subscription.
-4. **Refunds:** Refund requests for App Store purchases follow **Apple's policies and procedures**; we cannot issue refunds for Apple-billed IAP ourselves.
-5. **Restore purchases:** Use **Restore Purchases** in the App (or Apple's subscription management) on a device signed in with the same Apple ID. We link entitlements to a **pseudonymous app user id** (see §2.2); if you lose access to both your device data and Apple account recovery, restoration may be limited.
-6. **Premium features:** May include (as described in the App) **removing ads** and **notifications for favorite teams**, and other features we add. We may change, add, or discontinue specific Premium features with reasonable notice where required by law; your subscription remains governed by Apple’s terms for billing and cancellation.
-7. **Apple’s terms:** Your purchase is also subject to **Apple Media Services Terms** and App Store rules. If there is a conflict between a short summary here and Apple’s terms, **Apple’s terms control** for payment and subscription management.
+**Naming and entitlements:** The App may refer to this offering as **Premium** or **TV Bold Premium.** In our subscription system, premium access is tied to the **TVBold Pro** entitlement managed with **RevenueCat.** Exact in-app product names, subscription lengths, prices, and any free trial or introductory offer are shown only on the paywall and App Store product page at purchase time and may change by region or offering.
 
-This section is for convenience and does not constitute legal advice.
+1. **Payment:** Charges are billed to your **Apple ID**; we do not charge your card directly.
+2. **Auto-renewal:** Renews each period unless you cancel **at least 24 hours before** the current period ends, at the then-current price.
+3. **Manage / cancel:** **Settings → Apple ID → Subscriptions** (or the equivalent App Store subscription management). Uninstalling the App **does not** cancel a subscription.
+4. **Refunds:** Follow **Apple’s** refund policies; we cannot grant refunds for Apple-billed purchases ourselves.
+5. **Restore:** Use **Restore Purchases** in the App or Apple’s subscription tools on a device signed into the same Apple ID. Restore is linked to a **pseudonymous app user id** (§2.2); loss of both device data and Apple account access may limit restoration.
+6. **Features:** Premium may include **ad removal** (where ads are offered) and **favorite-team notifications**, and other features described in the App. We may modify features where permitted by law; billing remains under Apple’s terms.
+7. **Apple’s contract:** Purchases are subject to the [**Apple Media Services Terms**](https://www.apple.com/legal/internet-services/itunes/) and [Apple’s **Licensed Application End User License Agreement (Standard EULA)**](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) where applicable. If any summary here conflicts with Apple’s terms, **Apple’s terms control** for payment, renewal, and refunds.
+
+This section is a **plain-language summary** and is not legal advice.
 
 ## 15. Contact Us
-
-If you have questions about this Privacy Policy or our data practices:
 
 **Developer:** Thomas Kramer Nielsen  
 **App Name:** TV Bold  
 **Bundle Identifier:** thomaskramer.tvbold
 
-**Channels:**
-- App Store Connect messaging (if available for your region)
-- **Website / policy:** https://thomas-kramer.dk/privatlivspolitik-tvbold/
-- **Contact:** Use the support or contact option published on **https://thomas-kramer.dk/privatlivspolitik-tvbold/** for privacy-related requests, or reach out via App Store Connect.
+**Policy URL (also used in the App):** https://thomas-kramer.dk/privatlivspolitik-tvbold/
 
-Please include information that helps us locate your request (e.g. approximate date of use, region). We aim to respond within a reasonable time, typically within **30 days** where applicable laws do not require a different timeline.
+For privacy requests, use the contact options published on that page or reach out via **App Store Connect** where available. Include approximate dates and region to help us locate records. We aim to respond within **30 days** unless a different timeline applies by law.
 
 ## 16. Consent
 
-By using the App, you consent to the collection and use of information as described in this Privacy Policy. If you do not agree, please do not use the App.
+By using the App, you acknowledge this policy. If you do not agree, do not use the App.
 
 ---
 
-_This Privacy Policy is effective as of March 29, 2026, and applies to all users of the TV Bold mobile application._
+_This Privacy Policy applies to the TV Bold mobile application (bundle id `thomaskramer.tvbold`)._
