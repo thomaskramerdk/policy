@@ -210,8 +210,7 @@ This section is a **plain-language summary** and is not legal advice.
 **Developer:** Thomas Kramer Nielsen  
 **App Name:** TV Bold  
 **Bundle Identifier:** thomaskramer.tvbold
-
-**Policy URL (also used in the App):** https://thomas-kramer.dk/privatlivspolitik-tvbold/
+**Contact:** thomas@thomas-kramer.dk
 
 For privacy requests, use the contact options published on that page or reach out via **App Store Connect** where available. Include approximate dates and region to help us locate records. We aim to respond within **30 days** unless a different timeline applies by law.
 
