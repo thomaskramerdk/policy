@@ -1,6 +1,6 @@
 # Privacy Policy for TVBold
 
-**Last Updated: April 6, 2026**
+**Last Updated: July 19, 2026**
 
 ## 1. Introduction
 
@@ -51,7 +51,7 @@ The following data types are collected when you use the App, including via third
 - **Third-party collection:** Google Mobile Ads.
 
 #### Purchase history
-- **What we collect:** We do **not** process your payment card numbers. **Apple** processes in-app purchases. **RevenueCat** processes subscription and transaction-related metadata to determine whether premium access (our **TVBold Pro** entitlement) is active. **In the App today, subscription status for features like ad removal is determined client-side via RevenueCat;** our Supabase Edge Functions include optional **App Store receipt validation** that can be invoked when the App sends a receipt payload—**primarily for server-verified premium content flows when that path is used.**
+- **What we collect:** We do **not** process your payment card numbers. **Apple** processes in-app purchases and offer-code redemptions. **RevenueCat** processes subscription and transaction-related metadata to determine whether premium access (our **TVBold Pro** entitlement) is active. **In the App today, subscription status for features like ad removal is determined client-side via RevenueCat.** Our Supabase backend may also support optional **App Store receipt validation** for server-verified premium flows when that path is used.
 - **Purpose:** App Functionality (entitlements, restore purchases, optional server-side verification with Apple where needed).
 - **Linked to User:** Yes—to your **pseudonymous app user identifier** (Supabase anonymous user id used with RevenueCat) and, on Apple’s systems, your Apple ID (we do not receive your Apple ID password).
 - **Used for Tracking:** Not used by us for cross-app advertising tracking; refer to Apple’s and RevenueCat’s policies for their processing.
@@ -89,14 +89,18 @@ To reduce automated abuse and protect match data APIs, the App uses **Apple’s 
 
 ### 2.5 Data Stored Locally (Not “Collected” in the Apple Sense by Us)
 
-Unless it is also sent to servers as described above:
+Unless it is also sent to servers as described above, the following may be stored on your device (e.g. in **UserDefaults** or a local cache):
 
-- **Usage days / counters** (e.g. for when to show Apple’s in-app review prompt or paywall timing) in **UserDefaults** or similar.
-- **Preferences** such as favorite team may be stored locally **and** sent when you register for push as described in §2.3.
+- **Preferences:** favorite team; hidden leagues and channels; custom league order; appearance (light/dark/system); push opt-in preference.
+- **Usage counters** used to time Apple’s in-app review prompt or paywall presentation.
+- **Match schedule cache** and in-memory image cache for performance and offline resilience.
+- **APNs token** may be persisted locally to support unregister when you disable notifications.
+
+Your favorite team is also sent to our backend when you register for push as described in §2.3.
 
 ### 2.6 Data We Do Not Intend to Collect Directly Today
 
-- **Name, email, phone, or postal address** (unless we add optional account features and update this policy).
+- **Name, email, phone, or postal address** (unless we add optional account features and update this policy). Contact email you send us voluntarily (§15) is handled separately for support.
 - **Precise or coarse location** as a dedicated location feature.
 - **Health or fitness** data.
 - **Payment card or bank account numbers** (Apple processes payments).
@@ -111,7 +115,7 @@ Unless it is also sent to servers as described above:
 - **Normal App use:** Network traffic (including IP addresses), authenticated calls with JWT when signed in anonymously, and optional App Attest assertions.
 - **Ads:** After the **App Tracking Transparency** prompt (if shown), Google Mobile Ads initializes (§8).
 - **Analytics:** Firebase Analytics events from the App.
-- **Purchases:** Apple, RevenueCat, and—**when used**—our backend receipt validation with Apple.
+- **Purchases:** Apple, RevenueCat, and—**when used**—our backend receipt validation with Apple. Offer codes are redeemed through Apple’s system.
 - **Push opt-in:** Only after you request notifications; registration requires an active Premium subscription path as implemented in the App.
 
 ## 4. How We Use Your Information
@@ -125,7 +129,7 @@ Unless it is also sent to servers as described above:
 
 ### 5.1 Supabase
 
-**Anonymous auth**, edge functions (matches, reference data, **register-device** / **unregister-device**, optional **get-premium-content** receipt validation), and hosting. Data may include IP addresses, User ID (UUID), JWTs, device registration fields (§2.3), API telemetry, and receipt payloads when that endpoint is used.
+**Anonymous auth**, edge functions (matches, reference data, **register-device** / **unregister-device**, optional premium/receipt validation), and hosting. Data may include IP addresses, User ID (UUID), JWTs, device registration fields (§2.3), API telemetry, and receipt payloads when that endpoint is used.
 
 **Purpose:** App Functionality. **Tracking:** Not used by us for advertising tracking through Supabase.
 
@@ -151,7 +155,7 @@ Privacy policy: https://www.revenuecat.com/privacy
 
 ### 5.5 Apple
 
-App Store purchases, APNs, App Attest/DeviceCheck, and receipt validation endpoints when used.
+App Store purchases, offer-code redemption, APNs, App Attest/DeviceCheck, and receipt validation endpoints when used.
 
 Privacy policy: https://www.apple.com/legal/privacy/
 
@@ -200,8 +204,9 @@ These terms apply to **auto-renewing subscriptions** and other **in-app purchase
 3. **Manage / cancel:** **Settings → Apple ID → Subscriptions** (or the equivalent App Store subscription management). Uninstalling the App **does not** cancel a subscription.
 4. **Refunds:** Follow **Apple’s** refund policies; we cannot grant refunds for Apple-billed purchases ourselves.
 5. **Restore:** Use **Restore Purchases** in the App or Apple’s subscription tools on a device signed into the same Apple ID. Restore is linked to a **pseudonymous app user id** (§2.2); loss of both device data and Apple account access may limit restoration.
-6. **Features:** Premium may include **ad removal** (where ads are offered) and **favorite-team notifications**, and other features described in the App. We may modify features where permitted by law; billing remains under Apple’s terms.
-7. **Apple’s contract:** Purchases are subject to the [**Apple Media Services Terms**](https://www.apple.com/legal/internet-services/itunes/) and [Apple’s **Licensed Application End User License Agreement (Standard EULA)**](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) where applicable. If any summary here conflicts with Apple’s terms, **Apple’s terms control** for payment, renewal, and refunds.
+6. **Offer codes:** The App may let you redeem an Apple offer code; redemption and any resulting subscription are handled by Apple.
+7. **Features:** Premium may include **ad removal** (where ads are offered) and **favorite-team notifications**, and other features described in the App. We may modify features where permitted by law; billing remains under Apple’s terms.
+8. **Apple’s contract:** Purchases are subject to the [**Apple Media Services Terms**](https://www.apple.com/legal/internet-services/itunes/) and [Apple’s **Licensed Application End User License Agreement (Standard EULA)**](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) where applicable. If any summary here conflicts with Apple’s terms, **Apple’s terms control** for payment, renewal, and refunds.
 
 This section is a **plain-language summary** and is not legal advice.
 
@@ -209,10 +214,12 @@ This section is a **plain-language summary** and is not legal advice.
 
 **Developer:** Thomas Kramer Nielsen  
 **App Name:** TV Bold  
-**Bundle Identifier:** thomaskramer.tvbold
-**Contact:** thomas@thomas-kramer.dk
+**Bundle Identifier:** thomaskramer.tvbold  
+**Contact:** thomas@thomas-kramer.dk  
 
-For privacy requests, use the contact options published on that page or reach out via **App Store Connect** where available. Include approximate dates and region to help us locate records. We aim to respond within **30 days** unless a different timeline applies by law.
+**Policy URL (also used in the App):** https://github.com/thomaskramerdk/policy/blob/main/TVBold/privacy.md
+
+For privacy requests, email **thomas@thomas-kramer.dk** or reach out via **App Store Connect** where available. Include approximate dates and region to help us locate records. We aim to respond within **30 days** unless a different timeline applies by law.
 
 ## 16. Consent
 
