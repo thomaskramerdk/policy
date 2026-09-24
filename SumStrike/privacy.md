@@ -30,7 +30,7 @@ Vi driver ikke en egen server til Sum Strike. Det, der forlader enheden, går ku
 | Gemmer spil, fremgang og forældrerapport **på enheden** | Viser reklamer |
 | Bruger **RevenueCat** til at se, om et abonnement er aktivt | Bruger analyseværktøjer, crash-reportere eller trackere fra tredjepart |
 | Lader Apple håndtere **betaling** og valgfrit **Game Center** | Indsamler e-mail, telefonnummer, CPR, foto, kontakter eller placering |
-| Sætter en **forældrelås** foran køb og forældrerapport | Tracker dig på tværs af andre firmaers apps og websites (ingen ATT-prompt) |
+| Sætter en **forældrelås** foran alt, der har med køb at gøre, og foran forældrerapporten | Tracker dig på tværs af andre firmaers apps og websites (ingen ATT-prompt) |
 | Tillader **Familiedeling** af abonnementet | Sælger, udlejer eller bytter personoplysninger |
 | Bruger kun **faste emotes** online — ingen fri tekst | Kræver login for at spille |
 
@@ -78,7 +78,7 @@ Appen har ét medlemskab (`sum_strike_pro`) som månedligt abonnement, årligt a
 
 **Vi behandler ikke** kortnummer, Apple-id eller adgangskode. Betalingen kører hos Apple.
 
-**Sådan indsamles det:** Når appen starter, eller når en voksen (efter forældrelåsen) køber, gendanner eller administrerer abonnementet. RevenueCat-SDK’et taler med RevenueCats servere; StoreKit taler med Apple.
+**Sådan indsamles det:** Når appen starter, og når en voksen køber, gendanner eller administrerer et abonnement bag forældrelåsen. RevenueCat-SDK’et taler med RevenueCats servere; StoreKit taler med Apple.
 
 **Formål:** App-funktionalitet — at låse medlemskab op, gendanne køb, vise fornyelsesdato og lade Familiedeling virke. Ikke reklame, ikke analyse af barnets spil, ikke tracking.
 
@@ -191,7 +191,7 @@ Du kan trække samtykke til Game Center tilbage ved at logge ud af Game Center. 
 Afhængigt af hvor du bor, kan du have ret til indsigt, berigtigelse, sletning, begrænsning, dataportabilitet, indsigelse og til at klage.
 
 - **Lokale data:** brug nulstil i appen. Vi kan ikke udlevere det, vi ikke har.
-- **Køb:** Apple-id → Købshistorik / Abonnementer. Gendan køb ligger i appens indstillinger og er **ikke** bag forældrelåsen, fordi det ikke koster penge.
+- **Køb:** Apple-id → Købshistorik / Abonnementer. Gendan køb ligger i appens indstillinger, bag forældrelåsen.
 - **Øvrigt:** skriv til [thomas@thomas-kramer.dk](mailto:thomas@thomas-kramer.dk). Vi svarer som udgangspunkt inden for **30 dage**.
 
 Klager i Danmark kan sendes til **Datatilsynet** ([datatilsynet.dk](https://www.datatilsynet.dk)). I andre EØS-lande til det lokale tilsyn. I Californien m.fl. kan CCPA/CPRA give ret til at vide, slette og sige nej til “salg” eller “deling” til reklame — vi sælger og deler ikke data til reklame.
@@ -202,9 +202,9 @@ Vi diskriminerer ikke for, at du bruger dine rettigheder.
 
 ## 9. Børn
 
-Sum Strike er et **undervisningsspil**. Børn kan spille det; køb og forældrerapport ligger bag en **forældrelås** (et gangestykke, en voksen kan, et lille barn typisk ikke).
+Sum Strike er et **undervisningsspil**. Børn kan spille det; abonnementsskærmen, gendannelse af køb, administration af abonnementet, forældrerapporten og alle links ud af appen ligger bag en **forældrelås** (en skrevet instruks om, hvilke to af fem ens cirkler man skal holde fingeren på — en voksen klarer den på få sekunder, et lille barn typisk ikke, og der er ingen regnestykker i den). Låsen spørger hver gang og kan ikke slås fra. Bagefter beder Apple desuden selv om Face ID, Touch ID eller adgangskoden til Apple-kontoen, før noget bliver købt.
 
-Forældrelåsen er **ikke** det samme som et verificeret forældresamtykke efter COPPA eller GDPR artikel 8. Den stopper barnet fra at nå en betalingsskærm. Den indsamler ikke barnets personoplysninger til os.
+Forældrelåsen er **ikke** det samme som et verificeret forældresamtykke efter COPPA eller GDPR artikel 8. Den holder barnet ude af køb, af forældrerapporten og af opsigelse og refusion. Den indsamler ikke barnets personoplysninger til os.
 
 **Vi indsamler ikke bevidst personoplysninger fra børn under 13 år (COPPA) / under 13 år i Danmark (databeskyttelsesloven § 6) ud over det, der er nødvendigt for at levere appen:**
 
@@ -218,7 +218,7 @@ Vi overholder i øvrigt gældende regler om børns privatliv, herunder COPPA og 
 
 Hvis du mener, vi alligevel ligger inde med et barns personoplysninger, så skriv. Vi sletter det, vi kan slette.
 
-Appen ligger i kategorien **Educational Games**. Den er **ikke** indsendt i App Store’s Kids Category. Metadata bruger derfor ikke formuleringer forbeholdt den kategori.
+Appen ligger i App Store’s **Kids Category** og følger kravene i Apples retningslinje 1.3: ingen reklamer, ingen tredjepartsanalyse, og køb og links ud af appen kun bag forældrelåsen.
 
 ---
 
@@ -242,7 +242,7 @@ Priser, periode og eventuel prøveperiode vises på købsskærmen og i App Store
 2. Løbende abonnementer **fornyes automatisk**, medmindre de opsiges mindst 24 timer før periodens udløb.
 3. Opsigelse: **Indstillinger → [dit navn] → Abonnementer**, eller Kundecenter i appen (bag forældrelåsen). At slette appen opsiger **ikke**.
 4. Refusion følger **Apples** regler.
-5. **Gendan køb** findes i indstillingerne.
+5. **Gendan køb** findes i indstillingerne, bag forældrelåsen.
 6. Medlemskabet kan deles med **Familiedeling**, når det er slået til på produktet.
 7. Køb er underlagt [Apple Media Services-vilkår](https://www.apple.com/legal/internet-services/itunes/) og [Apples Standard EULA](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/). Ved modstrid gælder Apples vilkår for betaling, fornyelse og refusion.
 
@@ -316,7 +316,7 @@ We do not run our own backend for Sum Strike. Anything that leaves the device go
 | Store play, progress and the parent report **on the device** | Show ads |
 | Use **RevenueCat** to know whether a membership is active | Use third-party analytics, crash reporters or trackers |
 | Let Apple handle **payment** and optional **Game Center** | Collect email, phone, national ID, photos, contacts or location |
-| Put a **parental gate** in front of purchases and the parent report | Track you across other companies’ apps or websites (no ATT prompt) |
+| Put a **parental gate** in front of everything to do with buying, and the parent report | Track you across other companies’ apps or websites (no ATT prompt) |
 | Allow **Family Sharing** of the membership | Sell, rent or trade personal data |
 | Use **fixed emotes** only online — no free text | Require an account to play |
 
@@ -364,7 +364,7 @@ The App has one membership (`sum_strike_pro`) as a monthly subscription, yearly 
 
 **We do not process** card numbers, Apple ID or password. Payment runs on Apple’s side.
 
-**How it is collected:** When the App launches, or when an adult (after the parental gate) buys, restores or manages the subscription. The RevenueCat SDK talks to RevenueCat’s servers; StoreKit talks to Apple.
+**How it is collected:** When the App launches, and when an adult buys, restores or manages a subscription behind the parental gate. The RevenueCat SDK talks to RevenueCat’s servers; StoreKit talks to Apple.
 
 **Purpose:** App Functionality — unlocking membership, restoring purchases, showing the renewal date and making Family Sharing work. Not advertising, not analytics of the child’s play, not tracking.
 
@@ -477,7 +477,7 @@ You can withdraw Game Center consent by signing out of Game Center. The App stil
 Depending on where you live, you may have rights to access, rectify, erase, restrict, port, object, and complain.
 
 - **Local data:** use reset in the App. We cannot hand over what we do not have.
-- **Purchases:** Apple ID → Purchase History / Subscriptions. Restore Purchases is in the App’s settings and is **not** behind the parental gate, because it spends nothing.
+- **Purchases:** Apple ID → Purchase History / Subscriptions. Restore Purchases is in the App’s settings, behind the parental gate.
 - **Anything else:** email [thomas@thomas-kramer.dk](mailto:thomas@thomas-kramer.dk). We aim to reply within **30 days**.
 
 Complaints in Denmark go to **Datatilsynet** ([datatilsynet.dk](https://www.datatilsynet.dk)); elsewhere in the EEA to your local authority. In California and similar US states, CCPA/CPRA may add rights to know, delete and opt out of “sale” or “sharing” for advertising — we do not sell or share data for advertising.
@@ -488,9 +488,9 @@ We will not discriminate against you for exercising your rights.
 
 ## 9. Children
 
-Sum Strike is an **educational game**. Children can play it; purchases and the parent report sit behind a **parental gate** (an arithmetic check an adult passes and a young child typically does not).
+Sum Strike is an **educational game**. Children can play it; the subscription screen, restoring purchases, subscription management, the parent report and every link out of the App sit behind a **parental gate** (a written instruction saying which two of five identical circles to press and hold — an adult follows it in seconds, a young child typically cannot, and there is no arithmetic in it). The gate asks every time and cannot be switched off. Apple then asks for Face ID, Touch ID or the Apple Account password before anything is bought.
 
-The parental gate is **not** verifiable parental consent under COPPA or GDPR Article 8. It stops a child reaching a payment screen. It does not collect the child’s personal data for us.
+The parental gate is **not** verifiable parental consent under COPPA or GDPR Article 8. It keeps a child out of purchases, out of the parent report and out of cancellation and refunds. It does not collect the child’s personal data for us.
 
 **We do not knowingly collect personal information from children under 13 (COPPA) / under 13 in Denmark (Danish Data Protection Act § 6) beyond what is needed to provide the App:**
 
@@ -504,7 +504,7 @@ We otherwise comply with applicable children’s privacy laws, including COPPA a
 
 If you believe we nonetheless hold a child’s personal data, email us. We will delete what we can delete.
 
-The App is categorised as **Educational Games**. It is **not** submitted in the App Store Kids Category, so metadata does not use wording reserved for that category.
+The App is in the App Store **Kids Category** and follows Apple’s guideline 1.3: no ads, no third-party analytics, and purchases and links out of the App only behind the parental gate.
 
 ---
 
@@ -528,7 +528,7 @@ Prices, period and any trial are shown on the paywall and on the App Store and m
 2. Recurring subscriptions **renew automatically** unless cancelled at least 24 hours before the period ends.
 3. Cancel: **Settings → [your name] → Subscriptions**, or Customer Center in the App (behind the parental gate). Deleting the App does **not** cancel.
 4. Refunds follow **Apple’s** rules.
-5. **Restore Purchases** is in Settings.
+5. **Restore Purchases** is in Settings, behind the parental gate.
 6. Membership can be shared with **Family Sharing** when enabled on the product.
 7. Purchases are subject to the [Apple Media Services Terms](https://www.apple.com/legal/internet-services/itunes/) and [Apple’s Standard EULA](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/). If this summary conflicts with Apple’s terms, **Apple’s terms control** payment, renewal and refunds.
 
